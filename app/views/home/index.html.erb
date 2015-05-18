@@ -1,0 +1,8 @@
+<h1>Welcome to the Facebook Clone App</h1>
+
+<% if !user_signed_in? %>
+  <%= link_to "Sign up now!", new_user_registration_path %><br />
+  <%= link_to "Sign in", new_user_session_path %>
+<% else %>
+  <p>Welcome back</p>
+<% end %>
