@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   get 'users/index'
 
   get 'users/show'
@@ -19,7 +21,14 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :users
-  resources :friendships, only: [:create,:destroy] 
+  resources :friendships, only: [:create,:destroy]
+  resources :posts do
+    resources :comments do
+      resources :likes, only: [:create,:destroy]
+    end
+  end
+  resources :likes, only: [:create, :destroy]
+
   # Example resource route with options:
   #   resources :products do
   #     member do

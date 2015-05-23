@@ -1,0 +1,14 @@
+<%= link_to @post.user.name, @post.user %>:
+<%= @post.content %>
+<p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</p>
+<br />
+<% if !current_user.likes?(@post) %>
+  <%= link_to "Like", likes_path(:likeable_id => @post.id, :likeable_type => "post"), :action => :create, :method => :post %>
+<% end %>
+<% if @post.likers(User).count > 0 %>
+	<span><%= pluralize(@post.likers(User).count, "like") %></span>
+<% end %>
+<%= render partial: 'posts/comment', collection: @post.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "delete",post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %><br>
+<%= link_to "Back", @post.user %>

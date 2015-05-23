@@ -1,0 +1,9 @@
+<%= link_to post.user.name, post.user %>
+<%= post.content %>
+Posted <%= link_to "#{time_ago_in_words(post.created_at)}", post_path(post) %> ago.
+
+<% if current_user == post.user %>
+      <%= link_to "delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+<% end %>
+<br />
