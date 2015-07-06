@@ -42,6 +42,9 @@ gem 'acts_as_commentable'
 #Zurb fundation gem -- CSS and SASS
 gem 'foundation-rails'
 
+gem 'carrierwave',             '0.10.0' #image uploader
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.23.0' #for image resizing
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

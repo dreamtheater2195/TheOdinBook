@@ -1,5 +1,7 @@
 <%= link_to @post.user.name, @post.user %>:
 <%= @post.content %>
+<br />
+<%= image_tag @post.picture.url if @post.picture? %>
 <p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</p>
 <br />
 <% if !current_user.likes?(@post) %>
