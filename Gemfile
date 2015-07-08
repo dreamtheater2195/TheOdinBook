@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'faker'
+gem 'figaro'
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
@@ -31,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'omniauth-facebook'
 #Gem for opening emails in the browser
 gem "letter_opener", :group => :development
 # Use Unicorn as the app server
